@@ -17,7 +17,6 @@ def uklad(i):
 
 
 def animate_instance(i):
-    return None
 
 if __name__ == '__main__':
     ani = animation.FuncAnimation(uklad(16), animate_instance, interval=100)
