@@ -12,6 +12,7 @@ sigma = 1
 T = 2.5
 dt = 0.00001
 atoms = []
+kb = 1.38064852e-23
 
 
 class Atom:
@@ -31,6 +32,8 @@ class Atom:
 
 def uklad(i):
     global atoms
+    global mass
+    global kb
     fig = plt.figure()
     velocities = []
     isqrt = int(math.sqrt(i))
@@ -45,6 +48,7 @@ def uklad(i):
     sum_velocity = np.sum(np.array(velocities), axis=0)
     for atom in atoms:
         atom.velocity -= sum_velocity / len(velocities)
+        print((mass*np.linalg.norm(atom.velocity)**2)/3*kb)
     return fig
 
 
@@ -52,6 +56,7 @@ def animate_instance(frame):
     global dt
     global atoms
     global mass
+    # Jako przyspieszanie obliczen uzylem metody hashmapy dla wartosci. Zmienia algorytm z O(n*(n-1)) w O((n*(n-1)/2)
     cache = {}
     for i in range(100):
         for i, atom in enumerate(atoms):
@@ -73,6 +78,5 @@ def animate_instance(frame):
 
 
 if __name__ == '__main__':
-    fig = uklad(16)
-    anim = animation.FuncAnimation(fig, animate_instance, frames=100, interval=50, blit=True)
+    anim = animation.FuncAnimation(uklad(25), animate_instance, frames=100, interval=50, blit=True)
     plt.show()
