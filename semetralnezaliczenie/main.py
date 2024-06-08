@@ -1,6 +1,5 @@
 import math
 import random
-
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import animation
@@ -13,6 +12,7 @@ T = 2.5
 dt = 0.00001
 atoms = []
 kb = 1.38064852e-23
+atom_count = 16
 
 
 class Atom:
@@ -40,15 +40,14 @@ def uklad(i):
     plt.axes(xlim=(0, i), ylim=(0, i), aspect='equal')
     for y in range(isqrt):
         for x in range(isqrt):
-            # Initialize position and velocity for each atom
             atom = Atom(0.5*isqrt + x*isqrt, 0.5*isqrt + y*isqrt, round(random.uniform(-0.5, 0.5), 2), round(random.uniform(-0.5, 0.5), 2), 0.175*isqrt)
             fig.gca().add_patch(atom.circle)
             atoms.append(atom)
             velocities.append(atom.velocity)
     sum_velocity = np.sum(np.array(velocities), axis=0)
-    for atom in atoms:
+    for i, atom in enumerate(atoms):
         atom.velocity -= sum_velocity / len(velocities)
-        print((mass*np.linalg.norm(atom.velocity)**2)/3*kb)
+        print(f"Temperatura atomu {i + 1} wynosi: " + str((mass*np.linalg.norm(atom.velocity)**2)/3*kb) + " K")
     return fig
 
 
@@ -78,5 +77,5 @@ def animate_instance(frame):
 
 
 if __name__ == '__main__':
-    anim = animation.FuncAnimation(uklad(25), animate_instance, frames=100, interval=50, blit=True)
+    anim = animation.FuncAnimation(uklad(atom_count), animate_instance, frames=100, interval=50, blit=True)
     plt.show()
