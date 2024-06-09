@@ -13,7 +13,7 @@ dt = 0.00001
 atoms = []
 kb = 1.38064852e-23
 atom_count = 16
-
+cutoff_distance = 6
 
 class Atom:
     def __init__(self, x, y, vx, vy, radius):
@@ -57,20 +57,32 @@ def animate_instance(frame):
     global mass
     # Jako przyspieszanie obliczen uzylem metody hashmapy dla wartosci. Zmienia algorytm z O(n*(n-1)) w O((n*(n-1)/2)
     cache = {}
-    for i in range(100):
+    verletList = {}
+    for n in range(1000):
+        if n % 10 == 0:
+            verletList = {}
+            for i, atom in enumerate(atoms):
+                for j, atom_par in enumerate(atoms):
+                    if (j, i) in verletList:
+                        verletList[(i, j)] = verletList[(j, i)].copy()
+                    else:
+                        verletList[(i, j)] = np.linalg.norm(atom.position - atom_par.position) > cutoff_distance
         for i, atom in enumerate(atoms):
             sily = np.zeros((len(atoms), 2))
             for j, atom_par in enumerate(atoms):
-                if atom_par is atom:
+                if verletList[(i, j)]:
                     continue
-                if (i, j) in cache:
-                    sily[j] = cache[(i, j)]
-                    cache.pop((i, j))
                 else:
-                    rij = atom.position - atom_par.position
-                    dij = np.linalg.norm(rij)
-                    sily[j] += 24 * rij / dij ** 2 * (2 * (1 / dij) ** 12 - (1 / dij) ** 6)
-                    cache[(j, i)] = sily[j]
+                    if atom_par is atom:
+                        continue
+                    if (i, j) in cache:
+                        sily[j] = cache[(i, j)]
+                        cache.pop((i, j))
+                    else:
+                        rij = atom.position - atom_par.position
+                        dij = np.linalg.norm(rij)
+                        sily[j] += 24 * rij / dij ** 2 * (2 * (1 / dij) ** 12 - (1 / dij) ** 6)
+                        cache[(j, i)] = sily[j]
             atom.update_velocity(np.sum(sily, axis=0)/mass*dt)
             atom.update_position()
     return [atom.circle for atom in atoms]
