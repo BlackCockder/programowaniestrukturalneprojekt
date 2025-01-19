@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0391c287-d530-4ea5-beaf-5d28a7d8ca43" name="Changes" comment="Added semestral project">
-      <change afterPath="$PROJECT_DIR$/laby/graphs.py" afterDir="false" />
+    <list default="true" id="0391c287-d530-4ea5-beaf-5d28a7d8ca43" name="Changes" comment="Semestral project done">
+      <change afterPath="$PROJECT_DIR$/fizykaeksperymentalnaprojekt/Lekcja_3_time_series (1).ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fizykaeksperymentalnaprojekt/main.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fizykaeksperymentalnaprojekt/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/fizykaeksperymentalnaprojekt/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laby/graphs.py" beforeDir="false" afterPath="$PROJECT_DIR$/laby/graphs.py" afterDir="false" />
     </list>
     <list id="a6d0bf58-eb26-4083-8dfb-211755cd3848" name="Changes by Wiktor" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Jupyter Notebook" />
       </list>
     </option>
   </component>
@@ -80,6 +83,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\Pytohn2\fizykaeksperymentalnaprojekt" />
       <recent name="F:\Szkolny_projekt\programowanie_strukuralne_aka_python\Szkola" />
     </key>
   </component>
@@ -148,7 +152,10 @@
       <workItem from="1734541499102" duration="322000" />
       <workItem from="1734560369008" duration="679000" />
       <workItem from="1735169695067" duration="366000" />
-      <workItem from="1735310536730" duration="2596000" />
+      <workItem from="1735310536730" duration="2908000" />
+      <workItem from="1736904061126" duration="4681000" />
+      <workItem from="1736931940857" duration="1032000" />
+      <workItem from="1737323168339" duration="4326000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -198,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732828379136</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Semestral project done">
+      <option name="closed" value="true" />
+      <created>1735313340292</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1735313340292</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,13 +225,14 @@
     <MESSAGE value="Nowy commit" />
     <MESSAGE value="Finalized project" />
     <MESSAGE value="Added semestral project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added semestral project" />
+    <MESSAGE value="Semestral project done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Semestral project done" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Pytohn2$main.coverage" NAME="main Coverage Results" MODIFIED="1735313117210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fizykaeksperymentalnaprojekt" />
+    <SUITE FILE_PATH="coverage/Pytohn2$main.coverage" NAME="main Coverage Results" MODIFIED="1737325795539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fizykaeksperymentalnaprojekt" />
     <SUITE FILE_PATH="coverage/Szkola$PlanetyAnim3_1_.coverage" NAME="PlanetyAnim3(1) Coverage Results" MODIFIED="1717517930678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/semetralnezaliczenie" />
     <SUITE FILE_PATH="coverage/hjjghfvcgh$leak.coverage" NAME="leak Coverage Results" MODIFIED="1717789871108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Pytohn2$graphs.coverage" NAME="graphs Coverage Results" MODIFIED="1734560420446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/laby" />
+    <SUITE FILE_PATH="coverage/Pytohn2$graphs.coverage" NAME="graphs Coverage Results" MODIFIED="1736932332683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/laby" />
     <SUITE FILE_PATH="coverage/hjjghfvcgh$main.coverage" NAME="main Coverage Results" MODIFIED="1717799505546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/semetralnezaliczenie" />
     <SUITE FILE_PATH="coverage/Szkola$leak.coverage" NAME="leak Coverage Results" MODIFIED="1715893247047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Szkola$PlanetyAnimKsiezyc2_1_.coverage" NAME="PlanetyAnimKsiezyc2(1) Coverage Results" MODIFIED="1717516336408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/semetralnezaliczenie" />
