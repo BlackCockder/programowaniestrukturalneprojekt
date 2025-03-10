@@ -14,6 +14,7 @@ atoms = []
 kb = 1
 atom_count = 36
 cutoff_distance = 6
+box_size = int(math.sqrt(atom_count))
 
 class Atom:
     def __init__(self, x, y, vx, vy, radius):
@@ -51,26 +52,31 @@ def uklad(i):
     return fig
 
 
+def dystans_minimalny(rij):
+    global box_size
+    return rij - box_size * np.round(rij / box_size)
+
+
 def animate_instance(frame):
     global dt
     global atoms
     global mass
     global cutoff_distance
     cache = {}
-    verletList = {}
+    verlet_list = {}
     for n in range(100):
         if n % 10 == 0:
-            verletList = {}
+            verlet_list = {}
             for i, atom in enumerate(atoms):
                 for j, atom_par in enumerate(atoms):
-                    if (j, i) in verletList:
-                        verletList[(i, j)] = verletList[(j, i)].copy()
+                    if (j, i) in verlet_list:
+                        verlet_list[(i, j)] = verlet_list[(j, i)].copy()
                     else:
-                        verletList[(i, j)] = np.linalg.norm(atom.position - atom_par.position) > cutoff_distance
+                        verlet_list[(i, j)] = np.linalg.norm(dystans_minimalny(atom.position - atom_par.position)) > cutoff_distance
         for i, atom in enumerate(atoms):
             sily = np.zeros((len(atoms), 2))
             for j, atom_par in enumerate(atoms):
-                if verletList[(i, j)]:
+                if verlet_list[(i, j)]:
                     continue
                 else:
                     if atom_par is atom:
@@ -80,6 +86,8 @@ def animate_instance(frame):
                         cache.pop((i, j))
                     else:
                         rij = atom.position - atom_par.position
+                        rij[0] = dystans_minimalny(rij[0])
+                        rij[1] = dystans_minimalny(rij[1])
                         dij = np.linalg.norm(rij)
                         sily[j] -= 24 * rij / dij ** 2 * (2 * (1 / dij) ** 12 - (1 / dij) ** 6)
                         cache[(j, i)] = -sily[j]
