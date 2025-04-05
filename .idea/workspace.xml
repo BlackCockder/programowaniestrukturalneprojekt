@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0391c287-d530-4ea5-beaf-5d28a7d8ca43" name="Changes" comment="Finished physics project for Muzyk in .ipynb form">
-      <change beforePath="$PROJECT_DIR$/.idea/Szkola.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Szkola.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0391c287-d530-4ea5-beaf-5d28a7d8ca43" name="Changes" comment="Some more stuff for labs and programming 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laby/graphs.py" beforeDir="false" afterPath="$PROJECT_DIR$/laby/graphs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lawina.py" beforeDir="false" afterPath="$PROJECT_DIR$/lawina.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naturalsort.py" beforeDir="false" afterPath="$PROJECT_DIR$/naturalsort.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,6 +163,7 @@
       <workItem from="1742057320343" duration="3578000" />
       <workItem from="1742062503278" duration="6829000" />
       <workItem from="1742938635937" duration="3230000" />
+      <workItem from="1743891670365" duration="790000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -232,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737327841357</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Some more stuff for labs and programming 2">
+      <option name="closed" value="true" />
+      <created>1743891915978</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1743891915978</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,13 +251,14 @@
     <MESSAGE value="Added semestral project" />
     <MESSAGE value="Semestral project done" />
     <MESSAGE value="Finished physics project for Muzyk in .ipynb form" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished physics project for Muzyk in .ipynb form" />
+    <MESSAGE value="Some more stuff for labs and programming 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some more stuff for labs and programming 2" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Pytohn2$main.coverage" NAME="main Coverage Results" MODIFIED="1737325795539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fizykaeksperymentalnaprojekt" />
     <SUITE FILE_PATH="coverage/Szkola$PlanetyAnim3_1_.coverage" NAME="PlanetyAnim3(1) Coverage Results" MODIFIED="1717517930678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/semetralnezaliczenie" />
     <SUITE FILE_PATH="coverage/hjjghfvcgh$leak.coverage" NAME="leak Coverage Results" MODIFIED="1717789871108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Pytohn2$graphs.coverage" NAME="graphs Coverage Results" MODIFIED="1742941804887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/laby" />
+    <SUITE FILE_PATH="coverage/Pytohn2$graphs.coverage" NAME="graphs Coverage Results" MODIFIED="1743892170810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/laby" />
     <SUITE FILE_PATH="coverage/hjjghfvcgh$main.coverage" NAME="main Coverage Results" MODIFIED="1717799505546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/semetralnezaliczenie" />
     <SUITE FILE_PATH="coverage/Szkola$leak.coverage" NAME="leak Coverage Results" MODIFIED="1715893247047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Szkola$PlanetyAnimKsiezyc2_1_.coverage" NAME="PlanetyAnimKsiezyc2(1) Coverage Results" MODIFIED="1717516336408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/semetralnezaliczenie" />
