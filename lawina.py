@@ -60,11 +60,14 @@ for it in range(0, czas):
     #     fig.savefig('Ewolucja'+nStr+'.png')
     #     plt.clf()
 x, y = zip(*sorted(trace.items()))
-slope, intercept, r_value, p_value, std_err = stats.linregress(np.log(x),np.log(y))
+x = np.array(x)
+y = np.array(y)
+x_fit = x[x < 100]
+y_fit = y[x < 100]
+slope, intercept, r_value, p_value, std_err = stats.linregress(np.log(x_fit), np.log(y_fit))
 y_pred = np.exp(slope * np.log(np.array(x)) + intercept)
 plt.plot(x, y, linestyle='none', marker='o')
 plt.plot(x, y_pred, color='red', label=f'Linia: y = {slope:.2f}x + {intercept:.2f}')
 plt.xscale('log')
 plt.yscale('log')
 plt.show()
-# przyciac dla wszystkich x < 100

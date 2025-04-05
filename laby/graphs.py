@@ -1,3 +1,4 @@
+import math
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit as curve_fit
@@ -21,20 +22,20 @@ from sklearn.metrics import mean_squared_error
 #     uncertainty = (1 / sum(weights))**0.5
 #     return float(uncertainty)
 
-nazwy_parametrow = [0.12, 0.06, 0.04, 0.03, 0.024, 0.02, 0.017, 0.015, 0.013, 0.012, 0.011, 0.01, 0.0092]
-
-y_true = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65]
-
-
-# Plot
-plt.figure(figsize=(8, 5))
-plt.scatter(y_true, nazwy_parametrow, label="Zmierzona gęstość", color="blue")
-plt.plot(y_true, nazwy_parametrow, color="blue", linestyle="--", alpha=0.7)
-plt.title("Wykres zależności niepewności wzorcowania od ilości okrążeń wahadła")
-plt.ylabel("Niepewność wzorcowania [1/s]")
-plt.xlabel("Ilość okrążeń")
-plt.grid()
-plt.show()
+# nazwy_parametrow = [0.12, 0.06, 0.04, 0.03, 0.024, 0.02, 0.017, 0.015, 0.013, 0.012, 0.011, 0.01, 0.0092]
+#
+# y_true = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65]
+#
+#
+# # Plot
+# plt.figure(figsize=(8, 5))
+# plt.scatter(y_true, nazwy_parametrow, label="Zmierzona gęstość", color="blue")
+# plt.plot(y_true, nazwy_parametrow, color="blue", linestyle="--", alpha=0.7)
+# plt.title("Wykres zależności niepewności wzorcowania od ilości okrążeń wahadła")
+# plt.ylabel("Niepewność wzorcowania [1/s]")
+# plt.xlabel("Ilość okrążeń")
+# plt.grid()
+# plt.show()
 
 # def linear_fit(x, a, b):
 #     return a * x + b
@@ -99,3 +100,77 @@ plt.show()
 # mape = np.mean(relative_errors)
 #
 # print("Mean Absolute Percentage Error (MAPE):", mape, "%")
+# numer_pomiaru = np.arange(1, 7)
+# voltage1stResistor = [2.34, 1.57, 0.78, -0.77, -1.56, -2.33]
+# current1stResistor = [10.57 / 1000, 7.09 / 1000, 3.52/ 1000, -3.52 / 1000, -7.07 / 1000, -10.53 / 1000]
+# resistance1stResistor = []
+# resistance1stResistorUncertainty = []
+# power1stResistor = []
+# power1stResistorUncertainty = []
+#
+# voltage2ndResistor = [2.51, 1.68, 0.83, -0.83, -1.67, -2.52]
+# current2ndResistor = [7.64 / 1000, 5.12 / 1000, 2.55 / 1000, -2.54 / 1000, -5.08 / 1000, -7.66 / 1000]
+# resistance2ndResistor = []
+# resistance2ndResistorUncertainty = []
+# power2ndResistor = []
+# power2ndResistorUncertainty = []
+#
+# voltage3rdResistor = [2.82, 1.88, 0.94, -0.94, -1.88, -2.83]
+# current3rdResistor = [2.87 / 1000, 1.91 / 1000, 0.96 / 1000, -0.96 / 1000, -1.92 / 1000, -2.83 / 1000]
+# resistance3rdResistor = []
+# resistance3rdResistorUncertainty = []
+# power3rdResistor = []
+# power3rdResistorUncertainty = []
+# def calculateResistanceUncertainty(inputVoltage, inputCurrent, inputVoltageUncertainty, inputCurrentUncertainty):
+#     return math.sqrt(((1/inputCurrent)*inputVoltageUncertainty) ** 2 + ((-inputVoltage / (
+#                 inputCurrent ** 2)) * inputCurrentUncertainty) ** 2)
+#
+#
+# def calculatePowerUncertainty(inputVoltage, inputCurrent, inputVoltageUncertainty, inputCurrentUncertainty):
+#     return math.sqrt((inputCurrent * inputVoltageUncertainty)**2 + (inputVoltage*inputCurrentUncertainty)**2)
+#
+# for i in range(6):
+#     resistance1stResistor.append(voltage1stResistor[i]/current1stResistor[i])
+#     resistance2ndResistor.append(voltage2ndResistor[i]/current2ndResistor[i])
+#     resistance3rdResistor.append(voltage3rdResistor[i]/current3rdResistor[i])
+#     power1stResistor.append(voltage1stResistor[i]*current1stResistor[i])
+#     power2ndResistor.append(voltage2ndResistor[i]*current2ndResistor[i])
+#     power3rdResistor.append(voltage3rdResistor[i]*current3rdResistor[i])
+#     resistance1stResistorUncertainty.append(calculateResistanceUncertainty(voltage1stResistor[i], current1stResistor[i],
+#                                                                            0.005*voltage1stResistor[i] + 3*0.01,
+#                                                                            0.008*current1stResistor[i] + 3*0.00001) * 2)
+#     resistance2ndResistorUncertainty.append(calculateResistanceUncertainty(voltage2ndResistor[i], current2ndResistor[i],
+#                                                                            0.005*voltage2ndResistor[i] + 3*0.01,
+#                                                                            0.008*current2ndResistor[i] + 3*0.00001) * 2)
+#     resistance3rdResistorUncertainty.append(calculateResistanceUncertainty(voltage3rdResistor[i], current3rdResistor[i],
+#                                                                            0.005 * voltage3rdResistor[i] + 3 * 0.01,
+#                                                                            0.008 * current3rdResistor[i] + 3 * 0.00001) * 2)
+#     power1stResistorUncertainty.append(calculatePowerUncertainty(voltage1stResistor[i], current1stResistor[i],
+#                                                                  0.005*voltage1stResistor[i] + 3*0.01,
+#                                                                  0.008*current1stResistor[i] + 3*0.00001) * 2)
+#     power2ndResistorUncertainty.append(calculatePowerUncertainty(voltage2ndResistor[i], current2ndResistor[i],
+#                                                                  0.005*voltage2ndResistor[i] + 3*0.01,
+#                                                                  0.008*current2ndResistor[i] + 3*0.00001) * 2)
+#     power3rdResistorUncertainty.append(calculatePowerUncertainty(voltage3rdResistor[i], current3rdResistor[i],
+#                                                                  0.005*voltage3rdResistor[i] + 3*0.01,
+#                                                                  0.008*current3rdResistor[i] + 3*0.00001) * 2)
+
+# plt.figure(figsize=(10, 5))
+# plt.errorbar(voltage1stResistor, power1stResistor, yerr=power1stResistorUncertainty, fmt='o-', capsize=5, label="Opornik 1 (220 Ω)")
+# plt.errorbar(voltage2ndResistor, power2ndResistor, yerr=power2ndResistorUncertainty, fmt='s-', capsize=5, label="Opornik 2 (330 Ω)")
+# plt.errorbar(voltage3rdResistor, power3rdResistor, yerr=power3rdResistorUncertainty, fmt='d-', capsize=5, label="Opornik 3 (1k Ω)")
+# plt.xlabel("Napięcie (V)")
+# plt.ylabel("Zmierzona moc (W)")
+# plt.title("Moc prądu na odpowiednich opornikach")
+# plt.legend()
+# plt.grid(True)
+# plt.show()
+
+# x = [2, 20, 200, 2000]
+# y = [0.12, 1.17, 12.4, 173]
+# plt.plot(x, y, color='r', marker='o')
+# plt.xlabel("Zakres oporu [kΩ]")
+# plt.ylabel("Niepewność wzorcowania [%]")
+# plt.title("Zależność zakresu oporu od niepewności wzrocowania")
+# plt.grid(True)
+# plt.show()
